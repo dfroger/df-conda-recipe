@@ -1,0 +1,14 @@
+package:
+  name: yaml-cpp
+  version: 0.5.1
+
+source:
+  fn: yaml-cpp-0.5.1.tar.gz
+  url: https://yaml-cpp.googlecode.com/files/yaml-cpp-0.5.1.tar.gz
+
+build:
+  number: 1
+
+about:
+  home: https://code.google.com/p/yaml-cpp/
+  license: MIT
