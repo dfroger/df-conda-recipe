@@ -10,6 +10,11 @@ build:
   number: 2
   binary_relocation: false
 
+requirements:
+  build:
+    - cmake
+    - boost
+
 about:
   home: https://code.google.com/p/yaml-cpp/
   license: MIT
