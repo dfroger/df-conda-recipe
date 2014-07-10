@@ -1,0 +1,23 @@
+package:
+  name: mpiblacs 
+  version: 1.1
+
+source:
+  fn: mpiblacs.tgz
+  url: http://www.netlib.org/blacs/mpiblacs.tgz
+
+build:
+  number: 0
+  binary_relocation: true
+
+requirements:
+  build:
+    - atlas
+    - mpich2
+  run:
+    - atlas
+    - mpich2
+
+about:
+  home: http://www.netlib.org/blacs/index.html
+  license: None
