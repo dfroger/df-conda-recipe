@@ -28,7 +28,7 @@ DSuperLUroot 	= ${CONDADIR}
 DSUPERLULIB   	= $(DSuperLUroot)/lib/libsuperlu_dist_3.3.a
 #
 BLASDEF	     	= -DUSE_VENDOR_BLAS
-BLASLIB	      =
+BLASLIB	      = -L${CONDADIR}/lib -lcblas -lf77blas -latlas
 METISLIB    	= -L${CONDADIR}/lib -lmetis
 PARMETISLIB  	= -L${CONDADIR}/lib -lparmetis
 

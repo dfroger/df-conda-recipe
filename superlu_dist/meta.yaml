@@ -12,12 +12,12 @@ build:
 
 requirements:
   build:
-    - blas
+    - atlas
     - mpich2
     - metis
     - parmetis
   run:
-    - blas
+    - atlas
     - mpich2
     - metis
     - parmetis
