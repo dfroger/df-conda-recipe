@@ -1,0 +1,27 @@
+package:
+  name: scalapack
+  version: 2.0.2
+
+source:
+  fn: scalapack-2.0.2.tgz
+  url: http://www.netlib.org/scalapack/scalapack-2.0.2.tgz
+
+build:
+  number: 1
+  binary_relocation: true
+
+requirements:
+  build:
+    - system
+    - atlas
+    - mpich2
+    - mpiblacs
+  run:
+    - system
+    - atlas
+    - mpich2
+    - mpiblacs
+
+about:
+  home: http://www.netlib.org/scalapack/
+  license: modified BSD
