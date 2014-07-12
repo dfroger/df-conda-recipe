@@ -6,16 +6,14 @@ CONDAEXE = $(shell which conda)
 CONDABIN = $(dir $(CONDAEXE))
 CONDADIR = $(realpath $(CONDABIN)/..)
 
-blas2C: blas2C.o blaio.o
+example_blas: example_blas.o
 	gcc -o $@ $^ \
 			-L$(CONDADIR)/lib \
-			-Wl,-rpath,-L$(CONDADIR)/lib \
 			-lcblas -lf77blas -latlas
 
 %.o: %.c
-	gcc -fPIC \
-			-I$(CONDADIR)/include  \
+	gcc -I$(CONDADIR)/include  \
 			-c $<
 
 clean:
-	rm -f *.o blas2C
+	rm -f *.o example_blas
