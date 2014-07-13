@@ -1,0 +1,38 @@
+# CONDAEXE: /path/to/miniconda/bin/conda
+# CONDABIN: /path/to/miniconda/bin
+# CONDADIR: /path/to/miniconda
+
+CONDAEXE = $(shell which conda)
+CONDABIN = $(dir $(CONDAEXE))
+CONDADIR = $(realpath $(CONDABIN)/..)
+
+help:
+	@echo "Use one of the following targets: make <target>:"
+	@echo "    l1 : build blas level 1 example"
+	@echo "    l2 : build blas level 2 example"
+	@echo "    l3 : build blas level 3 example"
+	@echo "    la : build lapack example"
+
+l1: example_blas_level_1
+l2: example_blas_level_2
+l3: example_blas_level_3
+la: example_lapack
+
+example_blas_level_%: example_blas_level_%.o
+	gfortran -o $@ $^ \
+			-L$(CONDADIR)/lib \
+			-lf77blas -latlas
+
+example_lapack: example_lapack.o
+	gfortran -o $@ $^ \
+			-L$(CONDADIR)/lib \
+			-llapack -lf77blas -latlas
+
+%.o: %.f90
+	gfortran -I$(CONDADIR)/include  \
+			-I/usr/include/atlas/ \
+			-c $<
+
+clean:
+	rm -f *.o example_blas_level_1 example_blas_level_2 \
+			      example_blas_level_3 example_lapack
