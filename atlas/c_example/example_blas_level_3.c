@@ -22,7 +22,8 @@ int main()
   float C[M*N] = {0,0.5,1,1.5,2,2.5,3,3.5};
   int ldc = N;
 
-  cblas_sgemm(order, trans_a, trans_b, M, N, K, alpha, A, lda, B, ldb, beta, C, ldc);
+  cblas_sgemm(order, trans_a, trans_b, M, N, K, alpha, A, lda, 
+              B, ldb, beta, C, ldc);
 
   printf("%f %f %f %f\n",C[0],C[1],C[2],C[3]);
   printf("%f %f %f %f\n",C[4],C[5],C[6],C[7]);
