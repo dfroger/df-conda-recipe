@@ -3,11 +3,11 @@ program main
   
     integer,parameter:: n = 4
 
-    real(kind=4),dimension(n*n):: A = (/ &
+    real(kind=4),dimension(n,n):: A = reshape((/ &
         1,  0,  0,  0, &
         2,  5,  0,  0, &
         3,  6,  8,  0, &
-        4,  7,  9, 10 /)
+        4,  7,  9, 10 /),(/n,n/))
     
     integer:: lda = n
     real(kind=4),dimension(n):: b = (/20,38,43,30/)

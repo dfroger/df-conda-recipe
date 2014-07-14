@@ -13,10 +13,12 @@ int main()
                     2, 19,  32,  38,
                     4, 33,  90, 115};
     int lda = N;
-    int* ipiv = (int*) malloc(M*sizeof(int));
+    int ipiv[M];
     
-    int err = clapack_sgetrf(CblasRowMajor, M, N, A, lda, ipiv);
+    int err = clapack_sgetrf(CblasColMajor, M, N, A, lda, ipiv);
 
+    printf("%d\n",err);
+    printf("%d %d %d %d\n",ipiv[0],ipiv[1],ipiv[2],ipiv[3]);
     printf("%f %f %f %f\n",A[ 0],A[ 1],A[ 2],A[ 3]);
     printf("%f %f %f %f\n",A[ 4],A[ 5],A[ 6],A[ 7]);
     printf("%f %f %f %f\n",A[ 8],A[ 9],A[10],A[11]);

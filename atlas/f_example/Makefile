@@ -19,17 +19,17 @@ l3: example_blas_level_3
 la: example_lapack
 
 example_blas_level_%: example_blas_level_%.o
-	gfortran -o $@ $^ \
+	gfortran -g -o $@ $^ \
 			-L$(CONDADIR)/lib \
 			-lf77blas -latlas
 
 example_lapack: example_lapack.o
-	gfortran -o $@ $^ \
+	gfortran -g -o $@ $^ \
 			-L$(CONDADIR)/lib \
-			-llapack -lf77blas -latlas
+			-llapack -lf77blas -lcblas -latlas
 
 %.o: %.f90
-	gfortran -I$(CONDADIR)/include  \
+	gfortran -g -I$(CONDADIR)/include  \
 			-I/usr/include/atlas/ \
 			-c $<
 
