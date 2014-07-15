@@ -38,11 +38,11 @@
 #  Name and location of the BLACS library.  See section 2 for 
 #  details on BLACS debug level (BLACSDBGLVL).
 #  ----------------------------------------------------------
-   BLACSdir    = $(CONDADIR)/lib
+   BLACSdir    = $(BTOPdir)/LIB
    BLACSDBGLVL = 0
-   BLACSFINIT  = $(BLACSdir)/blacsF77init_$(COMMLIB)-$(PLAT)-$(BLACSDBGLVL).a
-   BLACSCINIT  = $(BLACSdir)/blacsCinit_$(COMMLIB)-$(PLAT)-$(BLACSDBGLVL).a
-   BLACSLIB    = $(BLACSdir)/blacs_$(COMMLIB)-$(PLAT)-$(BLACSDBGLVL).a
+   BLACSFINIT  = $(BLACSdir)/libblacsF77init_$(COMMLIB)-$(PLAT)-$(BLACSDBGLVL).a
+   BLACSCINIT  = $(BLACSdir)/libblacsCinit_$(COMMLIB)-$(PLAT)-$(BLACSDBGLVL).a
+   BLACSLIB    = $(BLACSdir)/libblacs_$(COMMLIB)-$(PLAT)-$(BLACSDBGLVL).a
 
 #  -------------------------------------
 #  Name and location of the MPI library.
@@ -50,7 +50,7 @@
    MPIdir = $(CONDADIR)
    MPILIBdir = $(MPIdir)/lib/
    MPIINCdir = $(MPIdir)/include
-   MPILIB = $(MPILIBdir)/libmpich.a
+   MPILIB = $(MPILIBdir)/libmpich.a $(MPILIBdir)/libmpl.a
 
 #  -------------------------------------
 #  All libraries required by the tester.
@@ -60,12 +60,12 @@
 #  ----------------------------------------------------------------
 #  The directory to put the installation help routines' executables
 #  ----------------------------------------------------------------
-   INSTdir = $(CONDADIR)/bin
+   INSTdir = $(BTOPdir)/INSTALL/EXE
 
 #  ------------------------------------------------
 #  The name and location of the tester's executable
 #  ------------------------------------------------
-   TESTdir = $(CONDADIR)/bin
+   TESTdir = $(BTOPdir)/TESTING/EXE
    FTESTexe = $(TESTdir)/xFbtest_$(COMMLIB)-$(PLAT)-$(BLACSDBGLVL)
    CTESTexe = $(TESTdir)/xCbtest_$(COMMLIB)-$(PLAT)-$(BLACSDBGLVL)
 #=============================================================================
@@ -93,7 +93,7 @@
 #  setting for your platform, compile and run BLACS/INSTALL/xintface.
 #  Choices are: Add_, NoChange, UpCase, or f77IsF2C.
 #  ---------------------------------------------------------------------------
-   INTFACE = -Df77IsF2C
+   INTFACE = -DAdd_
 
 #  ------------------------------------------------------------------------
 #  Allows the user to vary the topologies that the BLACS default topologies
@@ -140,9 +140,9 @@
 #  If you know that your MPI uses the same handles for fortran and C
 #  communicators, you can replace the empty macro definition below with
 #  the macro definition on the following line.
-  TRANSCOMM = -DCSameF77
+# TRANSCOMM = -DCSameF77
 #  -----------------------------------------------------------------------
-#  TRANSCOMM =
+   TRANSCOMM = -DCSameF77 -DPOINTER_64_BITS=1
 
 #  --------------------------------------------------------------------------
 #  You may choose to have the BLACS internally call either the C or Fortran77
@@ -195,15 +195,15 @@
 #  optimization.  This is the F77NO_OPTFLAG.  The usage of the remaining
 #  macros should be obvious from the names.
 #=============================================================================
-   F77            = gfortran
+   F77            = mpif90
    F77NO_OPTFLAGS = -O3
-   F77FLAGS       = $(F77NO_OPTFLAGS) -O
+   F77FLAGS       = $(F77NO_OPTFLAGS)
    F77LOADER      = $(F77)
    F77LOADFLAGS   = 
-   CC             = gcc
-   CCFLAGS        = -O3
+   CC             = mpicc
+   CCFLAGS        = -O3 -pthread
    CCLOADER       = $(CC)
-   CCLOADFLAGS    = 
+   CCLOADFLAGS    = -pthread
 
 #  --------------------------------------------------------------------------
 #  The archiver and the flag(s) to use when building an archive (library).
