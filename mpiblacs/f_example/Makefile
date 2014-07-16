@@ -6,19 +6,28 @@ CONDAEXE = $(shell which conda)
 CONDABIN = $(dir $(CONDAEXE))
 CONDADIR = $(realpath $(CONDABIN)/..)
 
+default: test
+
+all: hello dot
+
 hello: hello.o
-	mpif90 -o $@ $< -L$(CONDADIR)/lib \
+	mpif90 -g -o $@ $< -L$(CONDADIR)/lib \
 	-lblacsF77init_MPI-linux-64-0 \
 	-lblacs_MPI-linux-64-0 \
 	-lblacsF77init_MPI-linux-64-0
 
-# -lblacsCinit_MPI-linux-64-0
+dot: dot.o
+	mpif90 -g -o $@ $< -L$(CONDADIR)/lib \
+	-lblacsF77init_MPI-linux-64-0 \
+	-lblacs_MPI-linux-64-0 \
+	-lblacsF77init_MPI-linux-64-0 \
+	-lf77blas -latlas
 
-hello.o: hello.f90
-	mpif90 -fPIC -c $< 
+%.o: %.f90
+	mpif90 -g -fPIC -c $< 
 
-test:
-	mpirun -n 4 ./hello
+test: dot
+	mpirun -n 4 ./dot
 
 clean:
-	rm -f *.o hello
+	rm -f *.o hello dot

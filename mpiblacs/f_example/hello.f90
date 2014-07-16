@@ -1,9 +1,9 @@
 program main
 
-integer:: BLACS_PNUM
-external:: BLACS_PNUM
+integer:: blacs_pnum
+external:: blacs_pnum
 
-integer:: cntx, mpi_rank, mpi_size, nprow, npcol, myprow, mypcol
+integer:: ctx, mpi_rank, mpi_size, nprow, npcol, myprow, mypcol
 integer:: icaller, irow, icol, hisrow, hiscol
 
 call blacs_pinfo(mpi_rank, mpi_size)
@@ -13,11 +13,11 @@ nprow = int( sqrt( real(mpi_size) ) )
 npcol = mpi_size / nprow
 
 ! Get default context.
-call blacs_get(0, 0, cntx)
+call blacs_get(0, 0, ctx)
 
 ! Create grid.
-call blacs_gridinit(cntx, 'R', nprow, npcol)
-call blacs_gridinfo(cntx, nprow, npcol, myprow, mypcol)
+call blacs_gridinit(ctx, 'R', nprow, npcol)
+call blacs_gridinfo(ctx, nprow, npcol, myprow, mypcol)
 
 if (myprow==0 .and. mypcol==0) then
     write(*,*) "nprow,npcol: ", nprow, npcol
@@ -29,7 +29,7 @@ if ( (nprow == -1) .or. (npcol == -1) ) then
 endif
 
 ! Get process ID.
-icaller = blacs_pnum(cntx, myprow, mypcol)
+icaller = blacs_pnum(ctx, myprow, mypcol)
 
 write(*,*) "icaller, myprow, mypcol:", icaller,myprow,mypcol
 
@@ -39,12 +39,12 @@ if ( (myprow == 0) .and. (mypcol == 0) ) then
     do irow = 0, nprow-1
     do icol = 0, npcol-1
         if ( (irow /= 0) .or. (icol /= 0) ) then
-            call igerv2d(cntx, 1, 1, icaller, 1, irow, icol) 
+            call igerv2d(ctx, 1, 1, icaller, 1, irow, icol) 
             write(*,*) "Received:", icaller
         endif
 
         ! Make sure icaller is where we think in process grid.
-        call blacs_pcoord(cntx, icaller, hisrow, hiscol)
+        call blacs_pcoord(ctx, icaller, hisrow, hiscol)
         if ( (hisrow /= irow) .or. (hiscol /= icol) ) then
             write(*,*) "Error with icaller."
             stop
@@ -53,7 +53,7 @@ if ( (myprow == 0) .and. (mypcol == 0) ) then
     enddo
 
 else
-    call igesd2d(cntx, 1, 1, icaller, 1, 0, 0)
+    call igesd2d(ctx, 1, 1, icaller, 1, 0, 0)
     write(*,*) "Sent", icaller
 end if
 
