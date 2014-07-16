@@ -1,0 +1,20 @@
+package:
+  name: itk
+  version: 4.2.1
+
+source:
+  fn: InsightToolkit-4.2.1.tar.gz
+  url: http://downloads.sourceforge.net/project/itk/itk/4.2/InsightToolkit-4.2.1.tar.gz
+
+build:
+  number: 2
+  binary_relocation: true
+
+requirements:
+  build:
+    - cmake
+  run:
+
+about:
+  home: http://www.itk.org/
+  license: Apache 2.0
