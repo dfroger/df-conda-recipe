@@ -1,0 +1,15 @@
+package:
+  name: libunwind
+  version: 4.0.3
+
+source:
+  fn: libunwind-1.1.tar.gz
+  url: http://download.savannah.gnu.org/releases/libunwind/libunwind-1.1.tar.gz
+
+build:
+  number: 0
+  binary_relocation: true
+
+about:
+  home: http://www.nongnu.org/libunwind/
+  license: MIT
