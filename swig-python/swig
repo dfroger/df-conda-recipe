@@ -1,0 +1,4 @@
+#!/bin/bash
+THIS_SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+SWIG_LIB=$THIS_SCRIPT_DIR/../share/swig/2.0.10
+SWIG_LIB=$SWIG_LIB $THIS_SCRIPT_DIR/swig-wrong-hard-coded-libswig $*

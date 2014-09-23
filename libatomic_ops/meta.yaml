@@ -1,0 +1,15 @@
+package:
+  name: libatomic_ops
+  version: 7.4.2
+
+source:
+  fn: libatomic_ops-7_4_2.tar.gz 
+  url: https://github.com/ivmai/libatomic_ops/archive/libatomic_ops-7_4_2.tar.gz 
+
+build:
+  number: 0
+  binary_relocation: true
+
+about:
+  home: https://github.com/ivmai/libatomic_ops/
+  license: MIT style and GPL
