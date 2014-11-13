@@ -7,7 +7,7 @@ source:
   url: https://yaml-cpp.googlecode.com/files/yaml-cpp-0.5.1.tar.gz
 
 build:
-  number: 2
+  number: 3
   binary_relocation: false
 
 requirements:
