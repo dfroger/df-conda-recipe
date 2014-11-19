@@ -1,0 +1,14 @@
+package:
+  name: git
+  version: 2.1.3
+
+source:
+  fn: git-2.1.3.tar.gz
+  url: https://www.kernel.org/pub/software/scm/git/git-2.1.3.tar.gz
+
+build:
+  number: 0
+
+about:
+  home: http://www.git-scm.com/
+  license: GNU GPL v2
