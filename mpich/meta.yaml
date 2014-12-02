@@ -10,10 +10,6 @@ build:
   number: 1
   binary_relocation: true
 
-requirements:
-  build:
-    - cmake
-
 about:
   home: http://www.mpich.org/
   license: BSD
