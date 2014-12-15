@@ -1,0 +1,23 @@
+package:
+  name: mpi4py
+  version: 1.3.1
+
+source:
+  fn: mpi4py-1.3.1.tar.gz
+  url: https://bitbucket.org/mpi4py/mpi4py/downloads/mpi4py-1.3.1.tar.gz
+
+build:
+  number: 0
+  binary_relocation: true
+
+requirements:
+  build:
+    - mpich
+    - cython
+  run:
+    - mpich
+    - cython
+
+about:
+  home: https://bitbucket.org/mpi4py/mpi4py
+  license: BSD
