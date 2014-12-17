@@ -12,10 +12,10 @@ build:
 
 requirements:
   build:
-    - mpich
+    - mpich2
     - cython
   run:
-    - mpich
+    - mpich2
     - cython
 
 about:

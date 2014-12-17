@@ -5,7 +5,7 @@ set -o pipefail
 set -o nounset
 
 export CC=clang
-export CXX=clang
+export CXX=clang++
 
 export LIBS="-lgfortran"
 export DYLD_LIBRARY_PATH=$PREFIX/lib
