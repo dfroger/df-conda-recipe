@@ -7,16 +7,19 @@ source:
   url: https://bitbucket.org/mpi4py/mpi4py/downloads/mpi4py-1.3.1.tar.gz
 
 build:
-  number: 0
+  number: 2
   binary_relocation: true
 
 requirements:
   build:
-    - mpich2
+    - python 2.7*
+    - mpich2 # [linux]
+    - mpich2_cxx # [osx]
     - cython
   run:
-    - mpich2
-    - cython
+    - python 2.7*
+    - mpich2 # [linux]
+    - mpich2_cxx # [osx]
 
 about:
   home: https://bitbucket.org/mpi4py/mpi4py
