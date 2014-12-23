@@ -1,3 +1,2 @@
 cd master
-python setup.py build
-python setup.py install --prefix=$PREFIX
+$(which pip) install .
