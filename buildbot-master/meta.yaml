@@ -1,0 +1,32 @@
+package:
+  name: buildbot
+  version: 0.8.10
+
+source:
+  fn: v0.8.10.tar.gz
+  url: https://github.com/buildbot/buildbot/archive/v0.8.10.tar.gz
+
+build:
+  number: 0
+  binary_relocation: true
+
+requirements:
+  build:
+    - setuptools
+    - python 2.7*
+    - twisted >=9.0.0
+    - jinja2 >=2.1
+    - sqlalchemy-migrate ==0.6.1|==0.7.0|==0.7.1|==0.7.2
+    - sqlalchemy >=0.6,<=0.7.9
+    - dateutil ==1.5
+  run:
+    - python 2.7*
+    - twisted >=9.0.0
+    - jinja2 >=2.1
+    - sqlalchemy-migrate ==0.6.1|==0.7.0|==0.7.1|==0.7.2
+    - sqlalchemy >=0.6,<=0.7.9
+    - dateutil ==1.5
+
+about:
+  home: http://buildbot.net/
+  license: GPL2
