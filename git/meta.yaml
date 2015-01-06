@@ -7,8 +7,9 @@ source:
   url: https://www.kernel.org/pub/software/scm/git/git-2.2.1.tar.gz
 
 build:
-  number: 1
-  binary_relocation: false
+  number: 3
+  binary_relocation: true
+  detect_binary_files_with_prefix: true
 
 requirements:
   build:

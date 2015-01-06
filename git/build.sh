@@ -3,4 +3,4 @@ LDFLAGS=-L$PREFIX/lib
     --prefix=$PREFIX
 make -j$CPU_COUNT
 make install
-soften $PREFIX
+soften --verbose --relative-path $PREFIX
