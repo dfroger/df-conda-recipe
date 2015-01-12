@@ -5,9 +5,12 @@ package:
 source:
   fn: v0.8.10.tar.gz
   url: https://github.com/buildbot/buildbot/archive/v0.8.10.tar.gz
+  patches:
+    # See: https://github.com/buildbot/buildbot/commit/dd6632af2d5925032f812ef3d5d6746c1281d727
+    - fix_sqlalchemy_migrate_requirement.patch
 
 build:
-  number: 1
+  number: 2
   binary_relocation: true
 
 requirements:

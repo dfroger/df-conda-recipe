@@ -1,2 +1,2 @@
 cd master
-$(which pip) install .
+$PYTHON setup.py install
