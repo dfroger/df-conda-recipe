@@ -10,7 +10,7 @@ source:
     - fix_sqlalchemy_migrate_requirement.patch
 
 build:
-  number: 2
+  number: 3
   binary_relocation: true
 
 requirements:
@@ -30,6 +30,10 @@ requirements:
     - sqlalchemy-migrate ==0.6.1|==0.7.0|==0.7.1|==0.7.2
     - sqlalchemy >=0.6,<=0.7.10
     - dateutil ==1.5
+
+test:
+  commands:
+    - buildbot --help
 
 about:
   home: http://buildbot.net/
