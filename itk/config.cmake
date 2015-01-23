@@ -3,7 +3,7 @@
 #==========================================================
 
 # Install path prefix, prepended onto install directories.
-set(CMAKE_INSTALL_PREFIX "$PREFIX" CACHE PATH "")
+set(CMAKE_INSTALL_PREFIX "CONDA_PREFIX" CACHE PATH "")
 
 # Choose the type of build.
 # TODO: Release
@@ -26,120 +26,114 @@ set(BUILD_DOCUMENTATION "OFF" CACHE PATH "")
 #==========================================================
 
 # Use an outside build of HDF5.
-# ITK_USE_SYSTEM_HDF5:BOOL=ON
+set(ITK_USE_SYSTEM_HDF5 "ON" CACHE PATH "")
 
 # HDF5 library compiled with parallel IO support
-# HDF5_IS_PARALLEL:BOOL=FALSE
+set(HDF5_IS_PARALLEL "FALSE" CACHE PATH "")
 
 # The directory containing a CMake configuration file for HDF5.
-# HDF5_DIR:PATH=HDF5_DIR-NOTFOUND
+set(HDF5_DIR "HDF5_DIR-NOTFOUND" CACHE PATH "")
 
 #---------------------------
 # Executables
 #---------------------------
 
 # HDF5 Wrapper compiler.  Used only to detect HDF5 compile flags.
-# HDF5_C_COMPILER_EXECUTABLE:FILEPATH=$PREFIX/bin/h5cc
+set(HDF5_C_COMPILER_EXECUTABLE "CONDA_PREFIX/bin/h5cc" CACHE PATH "")
 
 # HDF5 C++ Wrapper compiler.  Used only to detect HDF5 compile flags.
-# HDF5_CXX_COMPILER_EXECUTABLE:FILEPATH=$PREFIX/bin/h5c++
+set(HDF5_CXX_COMPILER_EXECUTABLE "CONDA_PREFIX/bin/h5c++" CACHE PATH "")
 
 # HDF5 Fortran Wrapper compiler.  Used only to detect HDF5 compile flags.
-# HDF5_Fortran_COMPILER_EXECUTABLE:FILEPATH=HDF5_Fortran_COMPILER_EXECUTABLE-NOTFOUND
+set(HDF5_Fortran_COMPILER_EXECUTABLE "HDF5_Fortran_COMPILER_EXECUTABLE-NOTFOUND" CACHE PATH "")
 
 # HDF5 file differencing tool.
-# HDF5_DIFF_EXECUTABLE:FILEPATH=$PREFIX/bin/h5diff
+set(HDF5_DIFF_EXECUTABLE "CONDA_PREFIX/bin/h5diff" CACHE PATH "")
 
 #---------------------------
 # Include directories
 #---------------------------
 
 # HDF5 include directories
-#HDF5_C_INCLUDE_DIR:PATH=$PREFIX/include
-# HDF5_CXX_INCLUDE_DIR:PATH=$PREFIX/include
+set(HDF5_C_INCLUDE_DIR "CONDA_PREFIX/include" CACHE PATH "")
+set(HDF5_CXX_INCLUDE_DIR "CONDA_PREFIX/include" CACHE PATH "")
 
 #---------------------------
 # Libraries
 #---------------------------
 
 # HDF5 Libraries
-# HDF5_hdf5_LIBRARY_DEBUG:FILEPATH=HDF5_hdf5_LIBRARY_DEBUG-NOTFOUND
-# HDF5_hdf5_LIBRARY_RELEASE:FILEPATH=$PREFIX/lib/libhdf5.so
-# HDF5_hdf5_cpp_LIBRARY_DEBUG:FILEPATH=HDF5_hdf5_cpp_LIBRARY_DEBUG-NOTFOUND
-# HDF5_hdf5_cpp_LIBRARY_RELEASE:FILEPATH=$PREFIX/lib/libhdf5_cpp.so
+set(HDF5_hdf5_LIBRARY_DEBUG "HDF5_hdf5_LIBRARY_DEBUG-NOTFOUND" CACHE PATH "")
+set(HDF5_hdf5_LIBRARY_RELEASE "CONDA_PREFIX/lib/libhdf5.so" CACHE PATH "")
+set(HDF5_hdf5_cpp_LIBRARY_DEBUG "HDF5_hdf5_cpp_LIBRARY_DEBUG-NOTFOUND" CACHE PATH "")
+set(HDF5_hdf5_cpp_LIBRARY_RELEASE "CONDA_PREFIX/lib/libhdf5_cpp.so" CACHE PATH "")
 
 # m library
-# HDF5_m_LIBRARY_DEBUG:FILEPATH=HDF5_m_LIBRARY_DEBUG-NOTFOUND
-# HDF5_m_LIBRARY_RELEASE:FILEPATH=$PREFIX/lib/libm.so
+set(HDF5_m_LIBRARY_DEBUG "HDF5_m_LIBRARY_DEBUG-NOTFOUND" CACHE PATH "")
+set(HDF5_m_LIBRARY_RELEASE "CONDA_PREFIX/lib/libm.so" CACHE PATH "")
 
 # z library
-# HDF5_z_LIBRARY_DEBUG:FILEPATH=HDF5_z_LIBRARY_DEBUG-NOTFOUND
-# HDF5_z_LIBRARY_RELEASE:FILEPATH=$PREFIX/lib/libz.so
+set(HDF5_z_LIBRARY_DEBUG "HDF5_z_LIBRARY_DEBUG-NOTFOUND" CACHE PATH "")
+set(HDF5_z_LIBRARY_RELEASE "CONDA_PREFIX/lib/libz.so" CACHE PATH "")
 
-# dl library, provided by system, not conda`
-# HDF5_dl_LIBRARY_DEBUG:FILEPATH=HDF5_dl_LIBRARY_DEBUG-NOTFOUND
-# HDF5_dl_LIBRARY_RELEASE:FILEPATH=/usr/lib/libdl.so
-
-# rt library, provided by system, not conda
-# HDF5_rt_LIBRARY_DEBUG:FILEPATH=HDF5_rt_LIBRARY_DEBUG-NOTFOUND
-# HDF5_rt_LIBRARY_RELEASE:FILEPATH=/usr/lib/librt.so
+# dl and rt libraries are provided by system not conda.
 
 #==========================================================
 # JPEG
 #==========================================================
 
 # ITK_USE_SYSTEM_JPEG:BOOL=ON
-# JPEG_INCLUDE_DIR:PATH=$PREFIX/include
-# JPEG_LIBRARY:FILEPATH=$PREFIX/lib/libjpeg.so
+set(JPEG_INCLUDE_DIR "CONDA_PREFIX/include" CACHE PATH "")
+set(JPEG_LIBRARY "CONDA_PREFIX/lib/libjpeg.so" CACHE PATH "")
 
 #==========================================================
 # PNG
 #==========================================================
 
 # ITK_USE_SYSTEM_PNG:BOOL=ON
-# PNG_LIBRARY_DEBUG:FILEPATH=PNG_LIBRARY_DEBUG-NOTFOUND
-# PNG_LIBRARY_RELEASE:FILEPATH=$PREFIX/lib/libpng.so
-# PNG_PNG_INCLUDE_DIR:PATH=$PREFIX/include
+set(PNG_LIBRARY_DEBUG "PNG_LIBRARY_DEBUG-NOTFOUND" CACHE PATH "")
+set(PNG_LIBRARY_RELEASE "CONDA_PREFIX/lib/libpng.so" CACHE PATH "")
+set(PNG_PNG_INCLUDE_DIR "CONDA_PREFIX/include" CACHE PATH "")
 
 #==========================================================
 # TIFF
 #==========================================================
 
 # ITK_USE_SYSTEM_TIFF:BOOL=ON
-# TIFF_INCLUDE_DIR:PATH=$PREFIX/include
-# TIFF_LIBRARY:FILEPATH=$PREFIX/lib/libtiff.so
+set(TIFF_INCLUDE_DIR "CONDA_PREFIX/include" CACHE PATH "")
+set(TIFF_LIBRARY "CONDA_PREFIX/lib/libtiff.so" CACHE PATH "")
 
 #==========================================================
 # VXL
 #==========================================================
 
 # ITK_USE_SYSTEM_VXL:BOOL=OFF
-# Module_ITKVideoBridgeVXL:BOOL=OFF
-# VXL_UPDATE_CONFIGURATION:BOOL=OFF
+set(Module_ITKVideoBridgeVXL "OFF" CACHE PATH "")
+set(VXL_UPDATE_CONFIGURATION "OFF" CACHE PATH "")
 
 #==========================================================
 # ZLIB
 #==========================================================
 
 # ITK_USE_SYSTEM_GDCM:BOOL=ON
-# ZLIB_INCLUDE_DIR:PATH=$PREFIX/include
-# ZLIB_LIBRARY:FILEPATH=$PREFIX/lib/libz.so
+set(ZLIB_INCLUDE_DIR "CONDA_PREFIX/include" CACHE PATH "")
+set(ZLIB_LIBRARY "CONDA_PREFIX/lib/libz.so" CACHE PATH "")
 
 #==========================================================
 # GDCM
 #==========================================================
 
-# ITK_USE_SYSTEM_GDCM:BOOL=OFF
+set(ITK_USE_SYSTEM_GDCM "OFF" CACHE PATH "")
 
 #==========================================================
 # FFTW
 #==========================================================
 
 # Use an installed version of fftw
-# ITK_USE_SYSTEM_FFTW:BOOL=OFF
+set(ITK_USE_SYSTEM_FFTW "OFF" CACHE PATH "")
 
 # Use double precision fftw if found
-# ITK_USE_FFTWD:BOOL=OFF
+set(ITK_USE_FFTWD "OFF" CACHE PATH "")
 
 # Use single precision fftw if found
-# ITK_USE_FFTWF:BOOL=OFF
+set(ITK_USE_FFTWF "OFF" CACHE PATH "")
