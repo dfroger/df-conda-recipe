@@ -1,19 +1,31 @@
 package:
   name: itk
-  version: 4.2.1
+  version: 4.7.0
 
 source:
-  fn: InsightToolkit-4.2.1.tar.gz
-  url: http://downloads.sourceforge.net/project/itk/itk/4.2/InsightToolkit-4.2.1.tar.gz
+  fn: InsightToolkit-4.7.0.tar.gz
+  url: http://downloads.sourceforge.net/project/itk/itk/4.7/InsightToolkit-4.7.0.tar.gz
 
 build:
-  number: 2
+  number: 0
   binary_relocation: true
 
 requirements:
   build:
     - cmake
+    - system
+    - zlib
+    - libtiff
+    - libpng
+    - jpeg
+    - hdf5_cxx
   run:
+    - system
+    - zlib
+    - libtiff
+    - libpng
+    - jpeg
+    - hdf5_cxx
 
 about:
   home: http://www.itk.org/
