@@ -1,21 +1,8 @@
 mkdir build
 cd build
 
-cmake \
-    -DCMAKE_INSTALL_PREFIX=$PREFIX \
-    -DBUILD_EXAMPLES=OFF \
-    -DBUILD_TESTING=OFF \
-    -DBUILD_SHARED_LIBS=ON \
-    -DITK_USE_SYSTEM_GDCM=OFF \
-    -DITK_USE_SYSTEM_HDF5=OFF \
-    -DITK_USE_SYSTEM_JPEG=OFF \
-    -DITK_USE_SYSTEM_PNG=OFF \
-    -DITK_USE_SYSTEM_TIFF=OFF \
-    -DITK_USE_SYSTEM_VXL=OFF \
-    -DITK_USE_SYSTEM_ZLIB=OFF \
-    -DUSE_SYSTEM_FFTW=OFF \
-    ..
+sed s:CONDA_PREFIX:$PREFIX: $RECIPE_DIR/config.cmake > config.cmake
 
-make -j8
-
+cmake -C config.cmake ..
+make -j$CPU_COUNT
 make install
