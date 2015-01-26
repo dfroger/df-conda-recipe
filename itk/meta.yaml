@@ -13,14 +13,14 @@ build:
 requirements:
   build:
     - cmake
-    - system
+    - system # [linux]
     - zlib
     - libtiff
     - libpng
     - jpeg
     - hdf5_cxx
   run:
-    - system
+    - system # [linux]
     - zlib
     - libtiff
     - libpng
