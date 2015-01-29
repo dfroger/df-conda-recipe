@@ -7,20 +7,20 @@ source:
   url: http://downloads.sourceforge.net/project/itk/itk/4.7/InsightToolkit-4.7.0.tar.gz
 
 build:
-  number: 2
+  number: 4
   binary_relocation: true
 
 requirements:
   build:
     - cmake
-    - system
+    - system # [linux]
     - zlib
     - libtiff
     - libpng
     - jpeg
     - hdf5_cxx
   run:
-    - system
+    - system # [linux]
     - zlib
     - libtiff
     - libpng

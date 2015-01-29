@@ -7,7 +7,7 @@ source:
   url: http://downloads.sourceforge.net/project/tclap/tclap-1.2.1.tar.gz
 
 build:
-  number: 0
+  number: 2
   binary_relocation: true
 
 about:
