@@ -12,8 +12,10 @@ build:
 requirements:
   build:
     - system # [linux]
+    - libxaw # [osx]
   run:
     - system # [linux]
+    - libxaw # [osx]
 
 test:
   files:
