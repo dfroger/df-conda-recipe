@@ -9,5 +9,12 @@ source:
 build:
   number: 0
 
+requirements:
+  build:
+    - pkg-config
+    - zlib
+  run:
+    - zlib
+
 about:
   home: http://www.x.org/wiki/
