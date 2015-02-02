@@ -10,20 +10,15 @@ else
   FLAGS="CFLAGS=-Wno-return-type F77=/usr/local/bin/gfortran"
 fi
 
+tar xvzf $RECIPE_DIR/inrimage-4.6.5-fonts.tar.gz -C ..
+
 ./configure \
     --disable-build-fonts \
-    --disable-libtiff \
-    --disable-netpbm \
-    --disable-libjpeg \
-    --disable-libpng \
-    --enable-shared=yes \
-    --enable-static=no \
     --prefix=$PREFIX \
     $FLAGS
-cd src/inrimage
-make
+
+make # Note: -j make the build failed.
 make install
 
-mkdir -p $PREFIX/include/inrimage
-cd $SRC_DIR/src/h/inrimage
-cp image *.h $PREFIX/include/inrimage
+# Remove this broken symbolic link.
+rm $PREFIX/share/inrimage/WWW
