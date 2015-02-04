@@ -13,9 +13,12 @@ requirements:
   build:
     - system # [linux]
     - libxaw # [osx]
+    - pkg-config # [osx]
+    - libpng
   run:
     - system # [linux]
     - libxaw # [osx]
+    - libpng
 
 test:
   files:
