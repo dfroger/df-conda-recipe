@@ -7,15 +7,17 @@ source:
   url: https://who.rocq.inria.fr/Dominique.Bereziat/ftp/inrimage/4.6.5/inrimage-4.6.5.tar.gz
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
     - system # [linux]
     - libxaw # [osx]
+    - gfortran # [osx]
   run:
     - system # [linux]
     - libxaw # [osx]
+    - libgfortran # [osx]
 
 test:
   files:

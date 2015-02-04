@@ -1,13 +1,10 @@
 #!/bin/bash
 
-# Note:
-#  requires gfortran
-
 if [ -z "$OSX_ARCH" ]
 then
   FLAGS="LDFLAGS=-L$PREFIX/lib F77=/usr/bin/gfortran"
 else
-  FLAGS="CFLAGS=-Wno-return-type F77=/usr/local/bin/gfortran"
+  FLAGS="CFLAGS=-Wno-return-type F77=$PREFIX/bin/gfortran"
 fi
 
 ./configure \
