@@ -7,18 +7,19 @@ source:
   url: https://who.rocq.inria.fr/Dominique.Bereziat/ftp/inrimage/4.6.5/inrimage-4.6.5.tar.gz
 
 build:
-  number: 0
+  number: 1
+  detect_binary_files_with_prefix: true
 
 requirements:
   build:
     - system # [linux]
     - libxaw # [osx]
     - pkg-config # [osx]
-    - libpng
+    - libpng # [osx]
   run:
     - system # [linux]
     - libxaw # [osx]
-    - libpng
+    - libpng # [osx]
 
 test:
   files:
