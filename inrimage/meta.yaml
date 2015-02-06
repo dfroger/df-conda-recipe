@@ -7,7 +7,7 @@ source:
   url: https://who.rocq.inria.fr/Dominique.Bereziat/ftp/inrimage/4.6.5/inrimage-4.6.5.tar.gz
 
 build:
-  number: 1
+  number: 2
   detect_binary_files_with_prefix: true
 
 requirements:

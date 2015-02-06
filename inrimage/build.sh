@@ -24,6 +24,10 @@ fi
 make # Note: -j make the build failed.
 make install
 
+mkdir -p $PREFIX/include/inrimage
+cd $SRC_DIR/src/h/inrimage
+cp image *.h $PREFIX/include/inrimage
+
 # Remove this broken symbolic link.
 rm $PREFIX/share/inrimage/WWW
 
