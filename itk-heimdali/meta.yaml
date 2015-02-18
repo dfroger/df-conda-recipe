@@ -1,13 +1,13 @@
 package:
   name: itk-heimdali
-  version: 4.7.0
+  version: 4.7.0.1
 
 source:
   git_url: https://github.com/dfroger/ITK
-  git_tag: v4.7.0heimdali.0
+  git_tag: v4.7.0heimdali.1
 
 build:
-  number: 1
+  number: 0
   binary_relocation: true
 
 requirements:
