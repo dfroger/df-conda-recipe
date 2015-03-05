@@ -17,7 +17,7 @@ else
     ./configure \
         --disable-build-fonts \
         --prefix=$PREFIX \
-        F77=/usr/local/bin/gfortran \
+        F77=$PREFIX/bin/gfortran \
         CFLAGS='-Wno-return-type -std=c89'
 fi
 
