@@ -5,6 +5,8 @@ package:
 source:
   fn: inrimage-4.6.6.tar.gz
   url: https://who.rocq.inria.fr/Dominique.Bereziat/ftp/inrimage/4.6.6/inrimage-4.6.6.tar.gz
+  patches:
+    - return_type_is_void.patch # [osx]
 
 build:
   number: 0
