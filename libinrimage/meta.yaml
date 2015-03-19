@@ -1,16 +1,13 @@
 package:
   name: libinrimage
-  version: 4.6.5
+  version: 4.6.6
 
 source:
-  fn: inrimage-4.6.5.tar.gz
-  url: https://who.rocq.inria.fr/Dominique.Bereziat/ftp/inrimage/4.6.5/inrimage-4.6.5.tar.gz
-  patches:
-    - fix_macosx_environ.patch # [osx]
-    # See https://github.com/dfroger/heimdali/issues/17
+  fn: inrimage-4.6.6.tar.gz
+  url: https://who.rocq.inria.fr/Dominique.Bereziat/ftp/inrimage/4.6.6/inrimage-4.6.6.tar.gz
 
 build:
-  number: 2
+  number: 0
 
 requirements:
   build:
