@@ -18,7 +18,7 @@ then
         --prefix=$PREFIX
 else
     ./configure \
-        CFLAGS="-g -O0 -Wn-return-type" \
+        CFLAGS="-g -O0 -Wno-return-type" \
         FFLAGS="-g -O0" \
         F77="$PREFIX/bin/gfortran" \
         --disable-build-fonts \
