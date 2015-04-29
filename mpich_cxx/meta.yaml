@@ -1,5 +1,5 @@
 package:
-  name: mpich2_cxx
+  name: mpich_cxx
   version: 1.4.1p1
 
 source:

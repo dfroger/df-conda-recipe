@@ -1,5 +1,5 @@
 package:
-  name: mpich2
+  name: mpich_cxx_gfortran
   version: 1.4.1p1
 
 source:
@@ -7,7 +7,7 @@ source:
   url: http://www.mpich.org/static/downloads/1.4.1p1/mpich2-1.4.1p1.tar.gz 
 
 build:
-  number: 1
+  number: 0
   binary_relocation: true
 
 requirements:
