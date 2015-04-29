@@ -1,14 +1,18 @@
 package:
   name: mpich_cxx
-  version: 1.4.1p1
+  version: 3.1.4
 
 source:
-  fn: mpich2-1.4.1p1.tar.gz 
-  url: http://www.mpich.org/static/downloads/1.4.1p1/mpich2-1.4.1p1.tar.gz 
+  fn: mpich-3.1.4.tar.gz
+  url: http://www.mpich.org/static/downloads/3.1.4/mpich-3.1.4.tar.gz
 
 build:
   number: 0
   binary_relocation: true
+
+test:
+  commands:
+    - mpirun --help
 
 about:
   home: http://www.mpich.org/
