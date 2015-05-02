@@ -1,0 +1,27 @@
+package:
+  name: mpip
+  version: 3.4.1
+
+source:
+  fn: mpiP-3.4.1.tar.gz
+  url: http://downloads.sourceforge.net/project/mpip/mpiP/mpiP-3.4.1/mpiP-3.4.1.tar.gz
+
+build:
+  number: 0
+  binary_relocation: true
+
+test:
+  commands:
+    - ls
+
+requirements:
+  build:
+    - mpich
+    - libunwind
+  run:
+    - mpich
+    - libunwind
+
+about:
+  home: http://mpip.sourceforge.net/ 
+  license: BSD
