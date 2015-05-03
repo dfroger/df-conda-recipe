@@ -4,12 +4,11 @@ set -o pipefail
 
 ./configure \
     --prefix=$PREFIX \
+    --enable-dwarf \
     CFLAGS=-I$PREFIX/include \
     LDFLAGS=-L$PREFIX/lib
 
-# TODO: Address to Source Lookup
-
 LOGNAME=$USER \
-    make # -j$CPU_COUNT
+    make -j$CPU_COUNT
 
 make install
