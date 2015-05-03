@@ -1,0 +1,15 @@
+package:
+  name: libelf
+  version: 0.8.13
+
+source:
+  fn: libelf-0.8.13.tar.gz 
+  url: http://www.mr511.de/software/libelf-0.8.13.tar.gz 
+
+build:
+  number: 0
+  binary_relocation: true
+
+about:
+  home: http://www.mr511.de/software/
+  license: GPL
