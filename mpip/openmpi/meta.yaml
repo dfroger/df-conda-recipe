@@ -1,0 +1,28 @@
+package:
+  name: mpip
+  version: 3.4.1
+
+source:
+  fn: mpiP-3.4.1.tar.gz
+  url: http://downloads.sourceforge.net/project/mpip/mpiP/mpiP-3.4.1/mpiP-3.4.1.tar.gz
+
+build:
+  number: 0
+  binary_relocation: true
+  string: openmpi_0
+
+requirements:
+  build:
+    - openmpi # https://binstar.org/mpi4py/openmpi
+    - libunwind
+    - libelf
+    - libdwarf
+  run:
+    - openmpi # https://binstar.org/mpi4py/openmpi
+    - libunwind
+    - libelf
+    - libdwarf
+
+about:
+  home: http://mpip.sourceforge.net/ 
+  license: BSD
