@@ -12,5 +12,9 @@ export LIBRARY_PATH=$PREFIX/lib
 make -j$CPU_COUNT all
 
 cp dwarfdump/dwarfdump $PREFIX/bin
+
 cp dwarfdump/dwarfdump.conf $PREFIX/lib
 cp libdwarf/libdwarf.so  $PREFIX/lib
+
+cp libdwarf/dwarf.h $PREFIX/include
+cp libdwarf/libdwarf.h $PREFIX/include
