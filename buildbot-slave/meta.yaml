@@ -7,16 +7,21 @@ source:
   url: https://github.com/buildbot/buildbot/archive/v0.8.10.tar.gz
 
 build:
-  number: 1
+  number: 2
   binary_relocation: true
 
 requirements:
   build:
+    - pip
     - python
     - twisted >=8.0.0
   run:
     - python
     - twisted >=8.0.0
+
+test:
+  commands:
+    - buildslave --help
 
 about:
   home: http://buildbot.net/

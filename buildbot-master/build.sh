@@ -1,5 +1,7 @@
+hash -r
+
 cd master
-$(which pip) install .
+pip install .
 
 # note:
 # If not using pip but:
