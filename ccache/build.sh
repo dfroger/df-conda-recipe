@@ -5,8 +5,9 @@ ZLIB_LIB=$PREFIX/lib
 
 ./configure \
     --prefix=$PREFIX \
-    CPPFLAGS=-I$ZLIB_INC \
-    LDFLAGS=-L$ZLIB_LIB
+    CLAGS="-g" \
+    CPPFLAGS="-I$ZLIB_INC" \
+    LDFLAGS="-L$ZLIB_LIB"
 make
 make install
 
