@@ -9,3 +9,8 @@ ZLIB_LIB=$PREFIX/lib
     LDFLAGS=-L$ZLIB_LIB
 make
 make install
+
+for COMP in gcc g++ cc c++
+do
+    ln -s $PREFIX/bin/ccache $PREFIX/bin/$COMP  
+done
