@@ -1,14 +1,11 @@
 export PETSC_DIR=$PWD
 export PETSC_ARCH=linux-64-debug
 
-#PREFIX=/local/froger/miniconda
+ln -s $PREFIX/lib/libgfortran.so.1 $PREFIX/lib/libgfortran1.so
 
-python config/configure.py \
-    CXXFLAGS=-m64  \
-    CFLAGS=-m64 \
-    FCFLAGS=-m64 \
-    FFLAGS=-m64 \
-    LDFLAGS="-l$PREFIX/lib/libgfortran.so.1" \
+LC_ALL=C python config/configure.py \
+    LDFLAGS="-L$PREFIX/lib -lgfortran -lgfortran1" \
+    --prefix=$PREFIX \
     --with-debugging=yes \
     --with-dynamic-loading \
     --with-shared-libraries \
@@ -18,9 +15,6 @@ python config/configure.py \
     --with-parmetis-dir=$PREFIX \
     --with-scalapack-dir=$PREFIX
 
-#    --with-mumps-dir=$PREFIX
-#   --with-superlu_dist-dir=$PREFIX  \
+LC_ALL=C make all
 
-    #LDFLAGS="-L$PREFIX/lib -lgfortran" \
-    #--FC_LINKER_FLAGS=-l/local/froger/miniconda/lib/libgfortran.so.1 \
-
+make install

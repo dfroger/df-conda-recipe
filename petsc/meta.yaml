@@ -7,7 +7,7 @@ source:
   url: http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-3.4.5.tar.gz
 
 build:
-  number: 0
+  number: 1
   binary_relocation: true
 
 requirements:
@@ -18,14 +18,17 @@ requirements:
     - mpich2
     - mpiblacs
     - scalapack
+    - metis
     - parmetis
     - mumps
+    - python 2.7*
   run:
     - system
     - atlas
     - mpich2
     - mpiblacs
     - scalapack
+    - metis
     - parmetis
     - mumps
 
