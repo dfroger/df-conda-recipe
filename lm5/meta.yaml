@@ -1,0 +1,10 @@
+package:
+  name: lm5
+  version: 5.3
+
+source:
+  path: ../../felisce/download/lm5
+
+build:
+  number: 0
+  binary_relocation: true
