@@ -1,0 +1,10 @@
+package:
+  name: getpot
+  version: 1.1
+
+source:
+  path: ../../felisce/download/getpot-c++
+
+build:
+  number: 0
+  binary_relocation: true
