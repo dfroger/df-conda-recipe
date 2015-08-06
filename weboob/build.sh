@@ -1,0 +1,3 @@
+hash -r
+
+pip install .

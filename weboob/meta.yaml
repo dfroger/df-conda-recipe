@@ -1,0 +1,52 @@
+package:
+  name: weboob
+  version: 1.0
+
+source:
+  fn: weboob-1.0.tar.gz
+  url: https://symlink.me/attachments/download/289/weboob-1.0.tar.gz
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - pip
+    - setuptools
+    - python
+    - termcolor
+    - pyqt
+    - pyyaml
+    - simplejson
+    - lxml
+    - feedparser
+    - requests
+    - python-dateutil
+    - prettytable
+    - pillow
+    - gdata
+    - futures
+    - mechanize
+  run:
+    - python
+    - termcolor
+    - pyqt
+    - pyyaml
+    - simplejson
+    - lxml
+    - feedparser
+    - requests
+    - python-dateutil
+    - prettytable
+    - pillow
+    - gdata
+    - futures
+    - mechanize
+
+test:
+  commands:
+    - boobank --version
+
+about:
+  home: http://weboob.org/
+  license: AGPL
