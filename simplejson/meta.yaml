@@ -1,0 +1,21 @@
+package:
+  name: simplejson
+  version: 3.8.0
+
+source:
+  fn: simplejson-3.8.0.tar.gz
+  url: https://pypi.python.org/packages/source/s/simplejson/simplejson-3.8.0.tar.gz
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - pip
+    - python
+  run:
+    - python
+
+about:
+  home: https://github.com/simplejson/simplejson
+  license: MIT
