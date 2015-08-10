@@ -7,17 +7,22 @@ source:
   url: http://notmuchmail.org/releases/notmuch-0.20.2.tar.gz
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
+    - pip
     - xapian
-    - gmime # TODO
-    - talloc # TODO
+    - gmime
+    - talloc
   run:
     - xapian
     - gmime
     - talloc
+
+test:
+  imports:
+    - notmuch
 
 about:
   home: http://notmuchmail.org

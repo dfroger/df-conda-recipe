@@ -1,3 +1,5 @@
+hash -r
+
 CPPFLAGS=-I$PREFIX/include \
 LDFLAGS=-L$PREFIX/lib \
 ./configure \
@@ -6,3 +8,6 @@ LDFLAGS=-L$PREFIX/lib \
 make -j $CPU_PROC
 
 make install
+
+cd bindings/python
+pip install .
