@@ -7,11 +7,18 @@ source:
   url: https://github.com/threatstack/libmagic/archive/5.18.tar.gz
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
+    - pip
+    - python
   run:
+    - python
+
+test:
+  imports:
+    - magic
 
 about:
   home: https://github.com/threatstack/libmagic
