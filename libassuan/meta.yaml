@@ -1,0 +1,19 @@
+package:
+  name: libassuan
+  version: 2.2.1
+
+source:
+  fn: libassuan-2.2.1.tar.bz2
+  url: https://www.gnupg.org/ftp/gcrypt/libassuan/libassuan-2.2.1.tar.bz2
+
+build:
+  number: 0
+
+requirements:
+  build:
+  run:
+
+about:
+  home: https://www.gnupg.org/related_software/libassuan/index.html
+  license: GPL
+  summary: Libassuan is a small library implementing the so-called Assuan protocol. This protocol is used for IPC between most newer GnuPG components
