@@ -1,0 +1,22 @@
+package:
+  name: offlineimap
+  version: 6.5.7
+
+source:
+  fn: v6.5.7.tar.gz
+  url: https://github.com/OfflineIMAP/offlineimap/archive/v6.5.7.tar.gz
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - pip
+    - python
+  run:
+    - python
+
+about:
+  home: http://offlineimap.org/
+  license: GPLv2
+  summary: OfflineIMAP is a GPLv2 software to dispose your mailbox(es) as a local Maildir(s).
