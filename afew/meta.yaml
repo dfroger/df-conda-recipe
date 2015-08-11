@@ -1,0 +1,29 @@
+package:
+  name: afew
+  version: 2015.03.24
+
+source:
+  git_url: https://github.com/teythoon/afew
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - pip
+    - python
+    - dbacl 
+    - notmuch 
+  run:
+    - python
+    - dbacl 
+    - notmuch 
+
+test:
+  commands:
+    - afew --help
+
+about:
+  home: https://github.com/teythoon/afew
+  license: ISC
+  summary:  afew is an initial tagging script for notmuch mail
