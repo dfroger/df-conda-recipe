@@ -1,0 +1,19 @@
+package:
+  name: dbacl
+  version: 1.14.1
+
+source:
+  fn: dbacl-1.14.1.tar.gz
+  url: http://sourceforge.net/projects/dbacl/files/dbacl/1.14.1/dbacl-1.14.1.tar.gz
+
+build:
+  number: 0
+
+requirements:
+  build:
+  run:
+
+about:
+  home: http://dbacl.sourceforge.net
+  license: GPL
+  summary: A digramic Bayesian classifier
