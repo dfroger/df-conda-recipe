@@ -1,0 +1,24 @@
+package:
+  name: pygpgme
+  version: 0.3
+
+source:
+  fn: pygpgme-0.3.tar.gz
+  url: https://pypi.python.org/packages/source/p/pygpgme/pygpgme-0.3.tar.gz
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - pip
+    - python
+    - gpgme
+  run:
+    - python
+    - gpgme
+
+about:
+  home: https://launchpad.net/pygpgme
+  license: 
+  summary: PyGPGME is a Python module that lets you sign, verify, encrypt and decrypt messages using the OpenPGP format.
