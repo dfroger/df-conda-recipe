@@ -1,0 +1,24 @@
+package:
+  name: urwidtrees
+  version: 1.0.1.1
+
+source:
+  fn: urwidtrees-1.0.1.1.tar.gz
+  url: https://pypi.python.org/packages/source/u/urwidtrees/urwidtrees-1.0.1.1.tar.gz
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - pip
+    - python
+    - urwid
+  run:
+    - python
+    - urwid
+
+about:
+  home: https://github.com/pazz/urwidtrees
+  license: Copyright (C) 2015 Patrick Totzke
+  summary:  tree widgets for urwid
