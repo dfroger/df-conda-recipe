@@ -1,0 +1,27 @@
+package:
+  name: nodejs
+  version: 4.2.1
+
+source:
+  fn: node-v4.2.1.tar.gz
+  url: https://nodejs.org/dist/v4.2.1/node-v4.2.1.tar.gz
+  md5: 41d2b9fb5220af3fd98dd70fb33a2a10
+
+build:
+  number: 0
+  binary_relocation: true
+
+requirements:
+  build:
+      - python 2.7*
+  run:
+      - python 2.7*
+
+test:
+  commands: 
+    - node -e "console.log('Hello from node.js ' + process.version)"
+
+about:
+  home: https://nodejs.org/en/
+  license: MIT
+  summary: Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine 
