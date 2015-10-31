@@ -1,0 +1,25 @@
+package:
+  name: watchman
+  version: 4.1.0 
+
+source:
+  git_url: https://github.com/facebook/watchman.git
+  git_rev: v4.1.0
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - pcre
+  run:
+    - pcre
+
+test:
+  commands:
+    - watchman --version
+
+about:
+  home: https://facebook.github.io/watchman
+  license: Apache License 2.0
+  summary: Watches files and records, or triggers actions, when they change.
