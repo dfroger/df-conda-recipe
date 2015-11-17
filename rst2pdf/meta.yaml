@@ -1,0 +1,39 @@
+package:
+  name: rst2pdf
+  version: 0.93
+
+source:
+  fn: 0.93.tar.gz
+  url: https://github.com/rst2pdf/rst2pdf/archive/0.93.tar.gz
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - pip
+    - docutils
+    - matplotlib
+    - pdfrw
+    - pillow
+    - pil
+    - pygments
+    - reportlab
+    - sphinx
+  run:
+    - docutils
+    - matplotlib
+    - pdfrw
+    - pillow
+    - pil
+    - pygments
+    - reportlab
+    - sphinx
+
+test:
+  commands:
+    - rst2pdf --version
+
+about:
+  home: http://rst2pdf.ralsina.me/stories/index.html
+  license: MIT

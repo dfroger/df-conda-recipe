@@ -1,0 +1,22 @@
+package:
+  name: pdfrw
+  version: 0.2
+
+source:
+  fn: pdfrw-0.2.tar.gz
+  url: https://pypi.python.org/packages/source/p/pdfrw/pdfrw-0.2.tar.gz
+  md5: 1b46eaca5b6e0516ec682459954b210d
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - python
+    - pip
+  run:
+    - python
+
+about:
+  home: https://github.com/pmaupin/pdfrw
+  license: MIT and BSD
