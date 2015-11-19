@@ -1,0 +1,27 @@
+package:
+  name: hieroglyph
+  version: 0.7.1
+
+source:
+  fn: 0.7.1.tar.gz 
+  url: https://github.com/nyergler/hieroglyph/archive/0.7.1.tar.gz 
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - python
+    - pip
+    - sphinx
+  run:
+    - python
+    - sphinx
+
+test:
+  commands:
+    - hieroglyph
+
+about:
+  home: https://github.com/nyergler/hieroglyph
+  license: BSD
