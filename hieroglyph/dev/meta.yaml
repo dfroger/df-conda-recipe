@@ -1,0 +1,27 @@
+package:
+  name: hieroglyph
+  version: 0.8dev
+
+source:
+  git_url: https://github.com/nyergler/hieroglyph
+
+build:
+  number: 0
+  string: 2015.10.06
+
+requirements:
+  build:
+    - python
+    - pip
+    - sphinx
+  run:
+    - python
+    - sphinx
+
+test:
+  commands:
+    - hieroglyph
+
+about:
+  home: https://github.com/nyergler/hieroglyph
+  license: BSD
