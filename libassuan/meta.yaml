@@ -11,7 +11,9 @@ build:
 
 requirements:
   build:
+    - libgpg-error
   run:
+    - libgpg-error
 
 about:
   home: https://www.gnupg.org/related_software/libassuan/index.html
