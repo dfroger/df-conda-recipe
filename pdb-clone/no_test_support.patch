@@ -1,0 +1,13 @@
+--- setup.py.orig	2016-05-14 10:37:48.049220238 +0200
++++ setup.py	2016-05-14 10:38:05.489220075 +0200
+@@ -6,10 +6,6 @@
+ from __future__ import absolute_import
+ from __future__ import division
+ from __future__ import print_function
+-try:
+-    from test import support    # Python 3
+-except ImportError:
+-    from test import test_support as support    # Python 2
+ 
+ import sys
+ import os

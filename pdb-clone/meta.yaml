@@ -1,0 +1,32 @@
+package:
+  name: pdb-clone
+  version: 1.10
+
+source:
+  fn: pdb-clone-1.10.tar.gz
+  url: https://pypi.python.org/packages/24/57/bc3a9928daaa4534f719cd5e03d98441794d472f1ddfac3f55223fa49534/pdb-clone-1.10.tar.gz
+  md5: 47c47bbca967c63af1bdb7511c66c638
+  patches:
+        # pdb-clone setup.py requires test.support, not found by Conda Python.
+      - no_test_support.patch
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - setuptools
+    - python
+  run:
+    - python
+    - readline
+    - ncurses
+
+test:
+    imports:
+        - pdb_clone.pdb
+
+about:
+  home: https://bitbucket.org/xdegaye/pdb-clone/wiki/Home
+  license: GNU GPL2
+  summary: A clone of pdb, fast and with the remote debugging and attach features.
