@@ -14,9 +14,11 @@ requirements:
     - pip
     - python
     - gpgme
+    - libgpg-error
   run:
     - python
     - gpgme
+    - libgpg-error
 
 about:
   home: https://launchpad.net/pygpgme

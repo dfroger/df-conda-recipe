@@ -7,13 +7,15 @@ source:
   url: https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.5.5.tar.bz2
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
     - libgpg-error
     - libassuan
   run:
+    - libgpg-error
+    - libassuan
 
 about:
   home: https://www.gnupg.org/%28it%29/related_software/gpgme/index.html
