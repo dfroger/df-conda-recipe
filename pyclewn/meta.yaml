@@ -1,0 +1,29 @@
+package:
+  name: pyclewn
+  version: 2.3
+
+source:
+  fn: pyclewn-2.3.tar.gz
+  url: https://pypi.python.org/packages/d0/07/9bbe5f9c79d47e39dd932acad608101d9eac35d3ea09eb275b32e86f8022/pyclewn-2.3.tar.gz
+  md5: 3f85e50220a5d03777f45cf5aeac22c0
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - setuptools
+    - python
+    - pdb-clone
+  run:
+    - python
+    - pdb-clone
+
+test:
+    imports:
+        - clewn
+
+about:
+  home: http://pyclewn.sourceforge.net/
+  license: GNU GPL2
+  summary: A Vim front-end to the gdb and pdb debuggers.
