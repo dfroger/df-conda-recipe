@@ -6,13 +6,13 @@ source:
   git_url: https://github.com/pazz/alot
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
     - pip
     - python
-    - libmagic
+    - python-magic
     - configobj
     - twisted
     - notmuch
@@ -21,7 +21,7 @@ requirements:
     - pygpgme 
   run:
     - python
-    - libmagic
+    - python-magic
     - configobj
     - twisted
     - notmuch
