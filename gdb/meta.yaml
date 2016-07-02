@@ -13,9 +13,11 @@ build:
 
 requirements:
   build:
+    - python
   run:
+    - python
 
 about:
   home: https://www.gnu.org/software/gdb
-  summary: GDB: The GNU Project Debugger
+  summary: The GNU Project Debugger
   license: GNU GPL
