@@ -1,0 +1,21 @@
+package:
+  name: gdb
+  version: 7.11
+
+source:
+  fn: gdb-7.11.tar.gz
+  url: http://ftp.gnu.org/gnu/gdb/gdb-7.11.tar.gz
+
+build:
+  number: 0
+  binary_relocation: true
+  detect_binary_files_with_prefix: true
+
+requirements:
+  build:
+  run:
+
+about:
+  home: https://www.gnu.org/software/gdb
+  summary: GDB: The GNU Project Debugger
+  license: GNU GPL
