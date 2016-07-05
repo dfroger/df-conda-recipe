@@ -1,6 +1,6 @@
 package:
   name: afew
-  version: 2015.03.24
+  version: 2016.02.29
 
 source:
   git_url: https://github.com/teythoon/afew
@@ -14,10 +14,14 @@ requirements:
     - python
     - dbacl 
     - notmuch 
+    - chardet
+    - subprocess32
   run:
     - python
     - dbacl 
     - notmuch 
+    - chardet
+    - subprocess32
 
 test:
   commands:
