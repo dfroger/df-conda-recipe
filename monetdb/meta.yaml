@@ -1,0 +1,32 @@
+# sudo yum intall bison
+#
+
+package:
+  name: monetdb
+  version: 11.23.7
+
+source:
+  fn: MonetDB-11.23.7.tar.xz
+  url: https://www.monetdb.org/downloads/sources/Jun2016-SP1/MonetDB-11.23.7.tar.xz
+
+build:
+  number: 0
+
+requirements:
+  build:
+      - python
+      - pcre
+      - libxml2
+      - readline
+      - ncurses
+  run:
+      - python
+      - pcre
+      - libxml2
+      - readline
+      - ncurses
+
+about:
+  home: https://www.monetdb.org
+  license: Mozilla Public License, version 2.0
+  summary: MonetDB is an open source column-oriented database management system
