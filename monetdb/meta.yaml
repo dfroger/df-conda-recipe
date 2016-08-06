@@ -19,14 +19,14 @@ requirements:
       - libxml2
       - readline
       - ncurses
-      - openssl
+      - curl
   run:
       - python
       - pcre
       - libxml2
       - readline
       - ncurses
-      - openssl
+      - curl
 
 about:
   home: https://www.monetdb.org
