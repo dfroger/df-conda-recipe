@@ -14,6 +14,6 @@ CONDA_LIB="-lncurses -lxml2"
     --with-readline=$CONDA_PREFIX \
     --prefix=$PREFIX
 
-make
+make 2>&1 | tee make.log
 
-make install
+make install 2>&1 | tee make_install.log

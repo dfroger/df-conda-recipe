@@ -10,7 +10,7 @@ source:
   url: https://www.monetdb.org/downloads/sources/Jun2016-SP1/MonetDB-11.23.7.tar.xz
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -19,12 +19,14 @@ requirements:
       - libxml2
       - readline
       - ncurses
+      - openssl
   run:
       - python
       - pcre
       - libxml2
       - readline
       - ncurses
+      - openssl
 
 about:
   home: https://www.monetdb.org
